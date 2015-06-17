@@ -1,4 +1,5 @@
 <?php
+
 $pid = pcntl_fork();
 if($pid == -1){
    exit("\033[40;31mFatal!\n\033[0m");
@@ -16,7 +17,7 @@ if($pid == -1){
 }
 
 if(strtolower(PHP_OS) == "winnt" )exit("WINNT System isn't supported!");
-if(version_compare(PHP_VERSION,'5.5','<'))exit("PHP version must be greater than 5.5 or equal to 5.5");
+if(version_compare(PHP_VERSION,'5.3','<'))exit("PHP version must be greater than 5.3 or equal to 5.3");
 
 $readMap = [];//监测fd的可读性状态
 $writeMap = NULL;//监测fd的可写入性状态
